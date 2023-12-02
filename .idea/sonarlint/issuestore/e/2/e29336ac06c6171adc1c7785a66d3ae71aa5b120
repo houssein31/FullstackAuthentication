@@ -1,3 +1,5 @@
 
 Ë
-java:S6804"­Either replace the "@Value" annotation with a standard field initialization, use "${propertyName}" to inject a property or use "#{expression}" to evaluate a SpEL expression.(õ‡º•8Ì–¡ÿ¾1
+java:S6804 "­Either replace the "@Value" annotation with a standard field initialization, use "${propertyName}" to inject a property or use "#{expression}" to evaluate a SpEL expression.(õ‡º•8‡ôœÈÂ1
+v
+java:S1128"YRemove this unused import 'org.springframework.boot.autoconfigure.neo4j.Neo4jProperties'.(Ìàõ†8¡ä¦ÈÂ1

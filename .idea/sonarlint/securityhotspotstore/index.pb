@@ -85,3 +85,7 @@ h
 8frontend/src/app/auth-content/auth-content.component.css,d/4/d47ddbe71eb94f5a3205f929b8b931b6fd5a65c3
 ^
 .frontend/src/app/content/content.component.css,2/3/237ba254c4c734376eb62e13c99c4822d5b2e536
+]
+-frontend/src/app/buttons/buttons.component.ts,4/5/4596ff471ca93bdf3ea479eeb712ffe18ffdcc51
+_
+/frontend/src/app/buttons/buttons.component.html,b/c/bc89f7e351ac834f34edccc593540bb82a19b90a
