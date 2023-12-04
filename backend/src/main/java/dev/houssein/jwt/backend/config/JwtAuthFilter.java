@@ -14,28 +14,30 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final UserAuthProvider userAuthProvider;
+    private final UserAuthenticationProvider userAuthenticationProvider;
 
     @Override
     protected void doFilterInternal(
             HttpServletRequest request,
             HttpServletResponse response,
             FilterChain filterChain) throws ServletException, IOException {
-
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 
-        if(header != null)  {
+        if (header != null) {
+
+            //single  space maybe needed in regex
             String[] authElements = header.split(" ");
 
-            if(authElements.length == 2 && "Bearer".equals(authElements[0])) {
+            if (authElements.length == 2
+                    && "Bearer".equals(authElements[0])) {
                 try {
-
-                    if("GET".equals(request.getMethod())) {
-                        SecurityContextHolder.getContext().setAuthentication(userAuthProvider.validateToken(authElements[1]));
+                    if ("GET".equals(request.getMethod())) {
+                        SecurityContextHolder.getContext().setAuthentication(
+                                userAuthenticationProvider.validateToken(authElements[1]));
                     } else {
-                        SecurityContextHolder.getContext().setAuthentication(userAuthProvider.validateTokenStrongly(authElements[1]));
+                        SecurityContextHolder.getContext().setAuthentication(
+                                userAuthenticationProvider.validateTokenStrongly(authElements[1]));
                     }
-
                 } catch (RuntimeException e) {
                     SecurityContextHolder.clearContext();
                     throw e;
@@ -44,6 +46,5 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(request, response);
-
     }
 }

@@ -67,8 +67,6 @@ r
 Bbackend/src/main/java/dev/houssein/jwt/backend/dtos/SignUpDto.java,9/5/95c051bb516c71af21d73fdeedd7a1d5b38f2dd3
 v
 Fbackend/src/main/java/dev/houssein/jwt/backend/BackendApplication.java,2/6/26d4c537a66d3428b51a1dc97ec734f210733edb
-{
-Kbackend/src/main/java/dev/houssein/jwt/backend/config/UserAuthProvider.java,e/2/e29336ac06c6171adc1c7785a66d3ae71aa5b120
 x
 Hbackend/src/main/java/dev/houssein/jwt/backend/config/JwtAuthFilter.java,b/7/b78e7d336fd650e7cb4242baacc6041d46191524
 …
@@ -89,3 +87,5 @@ h
 -frontend/src/app/buttons/buttons.component.ts,4/5/4596ff471ca93bdf3ea479eeb712ffe18ffdcc51
 _
 /frontend/src/app/buttons/buttons.component.html,b/c/bc89f7e351ac834f34edccc593540bb82a19b90a
+‡
+Wbackend/src/main/java/dev/houssein/jwt/backend/config/UserAuthenticationEntryPoint.java,d/3/d38b0e8408b6b2a7d2c59453ea9973bca71faa98
