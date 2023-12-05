@@ -1,5 +1,6 @@
 package dev.houssein.jwt.backend.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -21,8 +22,8 @@ public class User {
     @Field(name = "last_name")
     private String lastName;
 
-    @Field(name = "username")
-    private String username;
+    @Field(name = "email")
+    private String email;
 
     @Field(name = "password")
     private String password;

@@ -46,7 +46,7 @@ public class UserAuthenticationProvider {
 
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
         return JWT.create()
-                .withIssuer(dto.getUsername())
+                .withIssuer(dto.getEmail())
                 .withIssuedAt(now)
                 .withExpiresAt(validity)
                 .withClaim("firstName", dto.getFirstName())
@@ -63,7 +63,7 @@ public class UserAuthenticationProvider {
         DecodedJWT decoded = verifier.verify(token);
 
         UserDto user = UserDto.builder()
-                .username(decoded.getIssuer())
+                .email(decoded.getIssuer())
                 .firstName(decoded.getClaim("firstName").asString())
                 .lastName(decoded.getClaim("lastName").asString())
                 .build();
@@ -79,7 +79,7 @@ public class UserAuthenticationProvider {
 
         DecodedJWT decoded = verifier.verify(token);
 
-        User user = userRepository.findByUsername(decoded.getIssuer())
+        User user = userRepository.findByEmail(decoded.getIssuer())
                 .orElseThrow(() -> new AppException("Unknown user", HttpStatus.NOT_FOUND));
 
         return new UsernamePasswordAuthenticationToken(userMapper.toUserDto(user), null, Collections.emptyList());
